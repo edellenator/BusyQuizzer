@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
 }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
 header {
     display: flex;
     padding: 0 20px;
@@ -11,7 +14,7 @@ header {
     color: white;
 }
 
-#initial-start-btn {
+.start-btn button {
     position: fixed;
     left: 50%;
     top: 50%;
@@ -20,10 +23,18 @@ header {
     background-color: purple;
     border: none;
     border-radius: 10px;
-    color: white;
+    color: #fff;
     font-size: 20px;
+    cursor: pointer;
 }
-#rules {
+
+.start-btn button:hover {
+    background-color: blueviolet;
+    transition: 0.5s;
+}
+/* .results-box */  
+.rules,
+.question {
     position:fixed;
     left: 50%;
     top: 50%;
@@ -33,4 +44,95 @@ header {
     border:3px solid black;
     padding: 30px;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 15px;
+    align-content: space-between;
+    display: none;
+}
+
+#rules h2 {
+    width: 100%;
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+#rules ol {
+    font-size: 20px;
+    line-height: 2;
+    width: 100%;
+}
+
+#rules ol li {
+    padding: 5px;
+    color: #000;
+    margin-bottom: 5px;
+    list-style-position: inside;
+    list-style-type: decimal;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 0 10px;
+}
+
+.btn {
+    width: 15%;
+    height: 10%;
+    border: none;
+    padding: 5px 10px;
+    background-color: lightgrey;
+    color: black;
+    border-radius: 10px;
+}
+
+.question h2 {
+    width: 100%;
+    font-size: 5vh;
+    margin-bottom: 5px;
+}
+
+.question h3 {
+    font-size: 3vh;
+    margin-bottom: 5px;
+}
+
+.question ol {
+    font-size: 20px;
+    line-height: 2;
+    width: 100%;
+    margin-bottom: 10%;
+    padding-bottom: 20px;
+    border-bottom: 3px solid lightgrey;
+}
+
+.question ol li {
+    padding: 5px;
+    background-color: purple;
+    color: white;
+    margin-bottom: 5px;
+    list-style-position: inside;
+    list-style-type: decimal;
+    width: 100%;
+    border-radius: 10px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.question ol li:hover {
+    background-color: blueviolet;
+    transition: 0.5s;
+}
+
+.correct,
+.incorrect {
+    width: 100%;
+    position:fixed;
+    left: 5%;
+    top: 85%;
+    font-size: 30px;
+    color: grey;
+    font-style: italic;
+    font-weight: 500;
+    padding-top: 10px;
+    opacity: 0;
 }
