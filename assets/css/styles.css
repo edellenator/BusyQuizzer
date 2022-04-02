@@ -15,7 +15,7 @@ header {
 }
 
 .start-btn button {
-    position: fixed;
+    position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -26,31 +26,22 @@ header {
     color: #fff;
     font-size: 20px;
     cursor: pointer;
+    pointer-events: auto;
 }
 
 .start-btn button:hover {
     background-color: blueviolet;
     transition: 0.5s;
 }
+
 .results-box,  
 .rules,
 .quiz-box {
-    position:fixed;
+    position:absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 50%;
-    height: 50%;
-    border:3px solid black;
-    padding: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    background-color: white;
-    border-radius: 15px;
-    align-content: space-between;
-    pointer-events: none;
-    opacity: 0;
+    
 }
 
 .results-box.activeResults,
@@ -65,6 +56,18 @@ header {
     text-align: center;
     align-content: center;
     background-color: cadetblue;
+    width: 50%;
+    height: 50%;
+    border:3px solid black;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 15px;
+    align-content: space-between;
+    pointer-events: none;
+    opacity: 0;
 }
 
 .results-box h2 {
@@ -86,19 +89,34 @@ header {
     width: 100%;
 }
 
-#rules h2 {
+.rules {
+    width: 50%;
+    height: 50%;
+    border:3px solid black;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 15px;
+    align-content: space-between;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.rules h2 {
     width: 100%;
     font-size: 40px;
     margin-bottom: 5px;
 }
 
-#rules ol {
+.rules ol {
     font-size: 20px;
     line-height: 2;
     width: 100%;
 }
 
-#rules ol li {
+.rules ol li {
     padding: 5px;
     color: #000;
     margin-bottom: 5px;
@@ -118,6 +136,21 @@ header {
     background-color: lightgrey;
     color: black;
     border-radius: 10px;
+}
+
+.quiz-box {
+    width: 50%;
+    height: 50%;
+    border:3px solid black;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 15px;
+    align-content: space-between;
+    pointer-events: none;
+    opacity: 0;
 }
 
 .question h2 {
