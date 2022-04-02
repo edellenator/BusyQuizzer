@@ -32,9 +32,9 @@ header {
     background-color: blueviolet;
     transition: 0.5s;
 }
-/* .results-box */  
+.results-box,  
 .rules,
-.question {
+.quiz-box {
     position:fixed;
     left: 50%;
     top: 50%;
@@ -49,7 +49,41 @@ header {
     background-color: white;
     border-radius: 15px;
     align-content: space-between;
-    display: none;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.results-box.activeResults,
+.rules.activeRules,
+.quiz-box.activeQuiz {
+    opacity: 1;
+    z-index: 5;
+    pointer-events: auto;
+}
+.results-box{
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    background-color: cadetblue;
+}
+
+.results-box h2 {
+    width: 100%;
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+.player {
+    line-height: 2;
+    font-size: 30px;
+}
+.player-results input {
+    font-size: 15px;
+    border: none;
+    width: 50%;
+    padding: 10px;
+}
+.player-results label {
+    width: 100%;
 }
 
 #rules h2 {
@@ -73,6 +107,7 @@ header {
     width: fit-content;
     border-radius: 10px;
     padding: 0 10px;
+    cursor: pointer;
 }
 
 .btn {
@@ -136,3 +171,4 @@ header {
     padding-top: 10px;
     opacity: 0;
 }
+

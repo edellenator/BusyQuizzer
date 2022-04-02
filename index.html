@@ -5,18 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coding Quiz</title>
-    <link rel="stylesheet" href="">
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 <body>
+
+    <!-- header elements -->
     <header>
         <h2 class="view-scores">View High Scores</h2>
         <h1>Coding quiz</h1>
-        <h2>Time Left:<span class="time-left"></span></h2>
+        <h2>Time Left:<span class="timer"></span></h2>
     </header>
+
+    <!-- start button -->
     <div class="start-btn">
-        <button type="submit" name="start" id="initial-start-btn">START</button>
+        <button>START</button>
     </div>
+
+    <!-- instructions -->
     <div class="rules">
         <h2>Coding Quiz Rules</h2>
         <ol>
@@ -24,48 +29,27 @@
             <li>Each incorrect answer will deduct 10 seconds.</li>
             <li>Correct answers will add 10 points Each.</li>
         </ol>
-        <button type="submit" name="start" class="btn" id="start-btn">START QUIZ</button>
-        <button type="reset" name="cancel" class="btn" id="cancel-btn">CANCEL</button>
+        <button class="btn begin">START QUIZ</button>
+        <button class="btn cancel">CANCEL</button>
     </div>
 
-    <main class="questions">
-        <div class="question">
+    <!-- question window -->
+    <main class="quiz-box">
+        <div>
             <h2>Question 1</h2>
             <div>
-                <h3>
-                    What does html stand for?
+                <h3 class="question-text">
+                    
                 </h3>
-                <ol>
-
-                    <li>Hyper Text Mailing Language</li>
-                    <li>Hyper Type Modal Language</li>
-                    <li>Hyper Text Markup Language</li>
-                    <li>Hyper Type Marking Language</li>
+                <ol class="options">
                 </ol>
                 <p class="correct">Correct!</p>
                 <p class="incorrect">Incorrect!</p>
             </div>
         </div>
-        <div class="question">
-            <h2>Question 2</h2>
-            
-            <h3>
-                addEventListener can be applied to which HTML element
-            </h3>
-            <ol>
-
-                <li>button</li>
-                <li>body</li>
-                <li>radio input</li>
-                <li>all of the above</li>
-            </ol>
-            <p class="correct">Correct!</p>
-            <p class="incorrect">Incorrect!</p>
-
-            
-        </div>
-
     </main>
+
+    <!-- results window -->
     <div class="results">
         <div class="results-box">
             <h2>Congratulations on finishing the quiz!</h2>
@@ -73,10 +57,10 @@
                 <div class="player-results">
                     <label for="player-name">Input your name here</label>
                     <input type="text" name="player-name" id="player-name">
-                    <p>Your score is<span data-playerScore=""></span></p>
+                    <p>Your score is<span class="player-score"></span></p>
                 </div>
                 <div class="high-scores">
-                    <p>The current high score is<span data-highScore=""></span></p>
+                    <p>The current high score is<span class="current-high-score"></span></p>
 
                 </div>
             </div>
