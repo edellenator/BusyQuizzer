@@ -153,18 +153,18 @@ header {
     opacity: 0;
 }
 
-.question h2 {
+.quiz-box h2 {
     width: 100%;
     font-size: 5vh;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 
-.question h3 {
+.quiz-box h3 {
     font-size: 3vh;
     margin-bottom: 5px;
 }
 
-.question ol {
+.quiz-box ol {
     font-size: 20px;
     line-height: 2;
     width: 100%;
@@ -173,7 +173,7 @@ header {
     border-bottom: 3px solid lightgrey;
 }
 
-.question ol li {
+.quiz-box ol li {
     padding: 5px;
     background-color: purple;
     color: white;
@@ -186,7 +186,7 @@ header {
     cursor: pointer;
 }
 
-.question ol li:hover {
+.quiz-box ol li:hover {
     background-color: blueviolet;
     transition: 0.5s;
 }
@@ -203,5 +203,10 @@ header {
     font-weight: 500;
     padding-top: 10px;
     opacity: 0;
+}
+
+.correct.correctActive,
+.incorrect.incorrectActive {
+    opacity: 1;
 }
 
