@@ -91,7 +91,7 @@ var startTimer = function (counter) {
     function countdown(){
         timer.textContent = counter;
         counter--;
-        if (time <= 0) {
+        if (counter <= 0) {
             timer.textContent = 0
         }
     }
