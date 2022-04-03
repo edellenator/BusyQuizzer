@@ -12,12 +12,15 @@ const resultsBox = document.querySelector(".results-box");
 const highScore = document.querySelector(".current-high-score");
 const playerScore = document.querySelector(".player-score");
 const timer = document.querySelector(".timer");
+const scoreItems = document.querySelector(".score-items")
+const viewScores = document.querySelector(".view-scores")
 var userScore = 0;
 var currentHigh = 0;
 var userName = "";
+//storage for user names and scores
 var userLogs = [];
 
-
+//questions array
 var questions = [
     {
         number:1,
@@ -53,18 +56,48 @@ var questions = [
         ]
     }
 ]
+
+//initial time start value equal to 300 seconds (5 minutes)
 var timeStart = 300
 
 
-var questionCount = 0;
-// start button clicked
 
+var questionCount = 0;
+
+window.onload = () => {
+    retrieveScores();
+    console.log(currentHigh);
+    console.log(userLogs);
+    function sortScore () {
+        alert(userLogs.sort((a,b) => {
+            if (b.score < a.score) {
+                return -1;
+            }
+            if (b.score > a.score) {
+                return 1;
+            }
+            return 0;
+            })
+        )
+    }
+    sortScore()
+}
+
+var showScores = function () {
+    var scoreText = "<p>Name: " + userLogs[0].name + " Score: " + userLogs[0].score; + "</p>";
+    scoreItems.textContent = scoreText;
+}
+
+
+// start button clicked - load instructions
 var pressStart = function() {
     console.log("you pressed start");
     rulesBox.classList.add("activeRules");
 };
 
 startBtn.addEventListener("click", pressStart)
+
+//cancel button clicked - return to start button screen
 
 var pressCancel = function() {
     console.log ("you pressed cancel");
@@ -73,6 +106,8 @@ var pressCancel = function() {
 
 btnCancel.addEventListener("click", pressCancel);
 
+
+//start quiz after pressing start button on instructions screen
 var quizStart = function() {
     console.log("you started the quiz")
     // reveal quiz box
@@ -84,7 +119,7 @@ var quizStart = function() {
     startTimer(timeStart)
     
 }
-
+//start timer after pressing quiz start
 var startTimer = function (counter) {
     timeStart = setInterval(countdown, 1000);
     function countdown(){
@@ -101,6 +136,7 @@ var startTimer = function (counter) {
 
 btnBegin.addEventListener("click", quizStart);
 
+//add question number, question text, and options for answers as quiz progresses
 var showQuestions = function(index) {
     var numb = questions[index].number;
     questionNumber.textContent = numb;
@@ -156,7 +192,20 @@ var saveScores = function () {
 }
 
 var retrieveScores = function () {
+    var retrievedHigh = localStorage.getItem("high score");
+    if (!retrievedHigh) {
+        return false;
+    };
 
+    currentHigh = retrievedHigh;
+
+    var retrievedUser = localStorage.getItem("User Scores");
+    if (!retrievedUser) {
+        return false;
+    };
+
+    retrievedUser = JSON.parse(retrievedUser);
+    userLogs.push(retrievedUser);
 }
 
 var quizEnd = function() {
@@ -169,8 +218,7 @@ var quizEnd = function() {
     playerScore.textContent="Your Score is " + userScore
     highScore.textContent = " " + currentHigh;
     submitName.onclick = ()=> {
-        console.log("you clicked it");
-        userName 
+        console.log("you clicked it"); 
         console.log(userName)
         var userArray = [
             {
@@ -178,6 +226,10 @@ var quizEnd = function() {
                 score: userScore,
             }
         ];
+        if (userArray.name === "") {
+            alert("you must fill in your name");
+            return quizEnd()
+        };
         userLogs.push(userArray);
         console.log(userLogs)
         if (userScore > currentHigh) {
