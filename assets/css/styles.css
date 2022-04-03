@@ -139,13 +139,23 @@ header .view-scores {
 }
 
 .btn {
-    width: 15%;
-    height: 10%;
+    width: 200px;
+    height: 75px;
     border: none;
     padding: 5px 10px;
     background-color: lightgrey;
     color: black;
     border-radius: 10px;
+    margin: 40px;
+}
+
+.btn:hover {
+    background-color: #2f0455;
+    color: white;
+}
+
+.btn:active {
+    background-color: #890ade;
 }
 
 .quiz-box {
