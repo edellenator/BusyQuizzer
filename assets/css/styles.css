@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+header {
+    display: flex;
+    padding: 0 20px;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+}
+
+header .view-scores {
+    cursor: pointer;
+}
+
+.start-btn button {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    background-color: purple;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.start-btn button:hover {
+    background-color: blueviolet;
+    transition: 0.5s;
+}
+
+.results-box,  
+.rules,
+.quiz-box,
+.score-box {
+    position:absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+.results-box.activeResults,
+.rules.activeRules,
+.quiz-box.activeQuiz {
+    opacity: 1;
+    z-index: 5;
+    pointer-events: auto;
+}
+
+.score-box.activeScore {
+    opacity: 1;
+    z-index: 6;
+    pointer-events: auto;
+}
+
+.results-box{
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    background-color: cadetblue;
+    width: 50%;
+    height: 50%;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    border-radius: 15px;
+    align-content: space-between;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.results-box h2 {
+    width: 100%;
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+.player {
+    line-height: 2;
+    font-size: 30px;
+}
+.player-results input {
+    font-size: 15px;
+    border: none;
+    width: 50%;
+    padding: 10px;
+    background-color: lightgrey;
+    text-align: center;
+}
+.player-results label {
+    width: 100%;
+}
+
+.rules {
+    width: 50%;
+    height: 50%;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 15px;
+    align-content: space-between;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.rules h2 {
+    width: 100%;
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.rules ol {
+    font-size: 20px;
+    line-height: 2;
+    width: 100%;
+}
+
+.rules ol li {
+    padding: 5px;
+    color: #000;
+    margin-bottom: 5px;
+    list-style-position: inside;
+    list-style-type: decimal;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.btn {
+    width: 200px;
+    height: 75px;
+    border: none;
+    padding: 5px 10px;
+    background-color: lightgrey;
+    color: black;
+    border-radius: 10px;
+    margin: 40px;
+}
+
+.btn:hover {
+    background-color: #2f0455;
+    color: white;
+}
+
+.btn:active {
+    background-color: #890ade;
+}
+
+.quiz-box {
+    width: 50%;
+    height: 50%;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 15px;
+    align-content: space-between;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.quiz-box h2 {
+    width: 100%;
+    font-size: 5vh;
+    margin-bottom: 15px;
+}
+
+.quiz-box h3 {
+    font-size: 3vh;
+    margin-bottom: 5px;
+}
+
+.quiz-box ol {
+    font-size: 20px;
+    line-height: 2;
+    width: 100%;
+    margin-bottom: 10%;
+    padding-bottom: 20px;
+    border-bottom: 3px solid lightgrey;
+}
+
+.quiz-box ol li {
+    padding: 5px;
+    background-color: purple;
+    color: white;
+    margin-bottom: 5px;
+    list-style-position: inside;
+    list-style-type: decimal;
+    width: 100%;
+    border-radius: 10px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.quiz-box ol li:hover {
+    background-color: blueviolet;
+    transition: 0.5s;
+}
+
+.correct,
+.incorrect {
+    width: 100%;
+    position:fixed;
+    left: 5%;
+    top: 85%;
+    font-size: 30px;
+    color: grey;
+    font-style: italic;
+    font-weight: 500;
+    padding-top: 10px;
+    opacity: 0;
+}
+
+.correct.correctActive,
+.incorrect.incorrectActive {
+    opacity: 1;
+}
+
+.score-box {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    padding: 30px;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.score-box h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.score-box .score-items {
+    line-height: 1.2;
+    font-size: 20px;
+}
+

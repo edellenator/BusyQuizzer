@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Quiz</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+
+    <!-- header elements -->
+    <header>
+        <h2 class="view-scores">View High Scores</h2>
+        <h1>Coding quiz</h1>
+        <h2>Time Left:<span class="timer"></span></h2>
+    </header>
+
+    <!-- start button -->
+    <div class="start-btn">
+        <button>START</button>
+    </div>
+
+    <!-- instructions -->
+    <div class="rules">
+        <h2>Coding Quiz Rules</h2>
+        <ol>
+            <li>You have 5 minutes to complete the quiz.</li>
+            <li>Each incorrect answer will deduct 10 seconds.</li>
+            <li>Correct answers will add 10 points Each.</li>
+        </ol>
+        <button class="btn begin">START QUIZ</button>
+        <button class="btn cancel">CANCEL</button>
+    </div>
+
+    <!-- question window -->
+    <main class="quiz-box">
+        <div>
+            <h2>Question <span class="question-number"></span></h2>
+            <div>
+                <h3 class="question-text">
+                    
+                </h3>
+                <ol class="options">
+                </ol>
+                <p class="correct">Correct!</p>
+                <p class="incorrect">Incorrect!</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- results window -->
+    <div class="results">
+        <div class="results-box">
+            <h2>Congratulations on finishing the quiz!</h2>
+            <div class="player">
+                <div class="player-results">
+                    <label for="player-name">Input your name here</label>
+                    <input type="text" name="player-name" id="player-name" placeholder="Your Name">
+                    <input for="player-name" class="btn submit-name" type="submit" />
+                </div>
+                <p class="player-score"></p>
+                <div class="high-scores">
+                    <p>The current high score is<span class="current-high-score"></span></p>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="score-box">
+        <h2>Top High Score</h2>
+        <div class="score-high"></div>
+        <h2>Other Players</h2>
+        <div class="score-item"></div>
+        <button class="hide-scores btn">Close</button>
+    </div>
+    <script src="./assets/js/script.js"></script>
+    
+</body>
+</html>
