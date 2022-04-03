@@ -9,8 +9,12 @@ header {
     display: flex;
     padding: 0 20px;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     color: black;
+}
+
+header .view-scores {
+    cursor: pointer;
 }
 
 .start-btn button {
@@ -36,7 +40,7 @@ header {
 .results-box,  
 .rules,
 .quiz-box,
-.score-logs {
+.score-box {
     position:absolute;
     left: 50%;
     top: 50%;
@@ -46,12 +50,18 @@ header {
 
 .results-box.activeResults,
 .rules.activeRules,
-.quiz-box.activeQuiz
-.score-logs.activeScores {
+.quiz-box.activeQuiz {
     opacity: 1;
     z-index: 5;
     pointer-events: auto;
 }
+
+.score-box.activeScore {
+    opacity: 1;
+    z-index: 6;
+    pointer-events: auto;
+}
+
 .results-box{
     justify-content: center;
     text-align: center;
@@ -209,21 +219,24 @@ header {
     opacity: 1;
 }
 
-.score-logs {
+.score-box {
     display: flex;
-    height: fit-content;
+    align-items: center;
+    text-align: center;
+    background-color: white;
     padding: 30px;
     justify-content: center;
     flex-direction: column;
     opacity: 0;
+    pointer-events: none;
 }
 
-.score-logs h2 {
+.score-box h2 {
     font-size: 40px;
     margin-bottom: 15px;
 }
 
-.score-logs p {
+.score-box .score-items {
     line-height: 1.2;
     font-size: 20px;
 }

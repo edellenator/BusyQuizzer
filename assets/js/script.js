@@ -12,8 +12,10 @@ const resultsBox = document.querySelector(".results-box");
 const highScore = document.querySelector(".current-high-score");
 const playerScore = document.querySelector(".player-score");
 const timer = document.querySelector(".timer");
-const scoreItems = document.querySelector(".score-items")
-const viewScores = document.querySelector(".view-scores")
+const scoreHigh = document.querySelector(".score-high")
+const scoreBox = document.querySelector(".score-box")
+const scoreLink = document.querySelector(".view-scores") 
+const closeScores = scoreBox.querySelector(".hide-scores")
 var userScore = 0;
 var currentHigh = 0;
 var userName = "";
@@ -64,12 +66,14 @@ var timeStart = 300
 
 var questionCount = 0;
 
+// load previous high scores and user logs from previous sessions
 window.onload = () => {
     retrieveScores();
     console.log(currentHigh);
     console.log(userLogs);
+    
     function sortScore () {
-        alert(userLogs.sort((a,b) => {
+        userLogs.sort((a,b) => {
             if (b.score < a.score) {
                 return -1;
             }
@@ -78,15 +82,36 @@ window.onload = () => {
             }
             return 0;
             })
-        )
     }
-    sortScore()
+    sortScore();
+    return currentHigh, userLogs
 }
 
+// open and show current high score
 var showScores = function () {
-    var scoreText = "<p>Name: " + userLogs[0].name + " Score: " + userLogs[0].score; + "</p>";
-    scoreItems.textContent = scoreText;
+    var scoreText = "The Current High Score is: " + currentHigh;
+    scoreHigh.textContent = scoreText;
+    // const scoreItem = scoreBox.querySelector(".score-item")
+    // for (i=0; i < userLogs.length; i++) {
+    //     var scoreItemEl = document.createElement("p");
+    //     scoreItemEl.textContent = "Name: " + userLogs[i].name + "  Score: " + userLogs[i].score;
+        
+    // }
+    // scoreItem.appendChild(scoreItemEl);
+    scoreBox.classList.add("activeScore")
+    
 }
+
+scoreLink.addEventListener("click", showScores)
+
+
+// close score box
+var hideScores = function () {
+    scoreBox.classList.remove("activeScore")
+}
+
+closeScores.addEventListener("click", hideScores)
+
 
 
 // start button clicked - load instructions
